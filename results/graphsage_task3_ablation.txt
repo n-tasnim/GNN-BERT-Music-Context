@@ -1,0 +1,7 @@
+Task 3 GNN-Only Ablation
+========================
+
+Test Samples: 77
+Test Accuracy: 0.7273
+Macro-F1: 0.6218
+Macro AUC-PR: 0.6662

@@ -1,0 +1,30 @@
+Fusion Test Results
+===================
+
+Test Loss: 0.8451
+Test Accuracy: 0.8052
+Macro Precision: 0.7544
+Macro Recall: 0.7500
+Macro-F1: 0.7379
+Micro-F1: 0.8052
+Macro AUC-PR: 0.9188
+Micro AUC-PR: 0.8961
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+       blues       0.67      1.00      0.80         4
+   classical       0.75      0.90      0.82        10
+     country       1.00      0.90      0.95        10
+       disco       0.00      0.00      0.00         0
+      hiphop       1.00      0.70      0.82        10
+        jazz       0.88      0.70      0.78        10
+       metal       1.00      0.90      0.95        10
+         pop       0.78      0.70      0.74        10
+      reggae       0.60      1.00      0.75         3
+        rock       0.88      0.70      0.78        10
+
+    accuracy                           0.81        77
+   macro avg       0.75      0.75      0.74        77
+weighted avg       0.87      0.81      0.83        77

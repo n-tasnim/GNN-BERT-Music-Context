@@ -1,0 +1,30 @@
+Text-Only DistilBERT Test Results
+=================================
+
+Test Loss: 0.9501
+Test Accuracy: 0.7662
+Macro Precision: 0.7032
+Macro Recall: 0.6967
+Macro-F1: 0.6797
+Micro-F1: 0.7662
+Macro AUC-PR: 0.7887
+Micro AUC-PR: 0.8186
+
+
+Classification Report
+              precision    recall  f1-score   support
+
+       blues       0.40      1.00      0.57         4
+   classical       0.90      0.90      0.90        10
+     country       1.00      0.90      0.95        10
+       disco       0.00      0.00      0.00         0
+      hiphop       1.00      0.80      0.89        10
+        jazz       1.00      0.80      0.89        10
+       metal       0.88      0.70      0.78        10
+         pop       0.50      0.60      0.55        10
+      reggae       0.50      0.67      0.57         3
+        rock       0.86      0.60      0.71        10
+
+    accuracy                           0.77        77
+   macro avg       0.70      0.70      0.68        77
+weighted avg       0.84      0.77      0.79        77
