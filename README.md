@@ -1,4 +1,4 @@
-# GNN--BERT for Multimodal Music Understanding and Cross-Modal Retrieval
+# GNN-BERT for Multimodal Music Understanding and Cross-Modal Retrieval
 
 A multimodal music understanding project combining **Graph Neural
 Networks (GNNs)** with **BERT-based text representations** for music
@@ -10,8 +10,8 @@ The project contains four main tasks:
 
 1.  **Music tag understanding with DistilBERT**
 2.  **Graph-based music genre classification with GraphSAGE**
-3.  **GNN--BERT multimodal fusion using cross-attention**
-4.  **Cross-modal graph--text retrieval using a contrastive dual
+3.  **GNN-BERT multimodal fusion using cross-attention**
+4.  **Cross-modal graph-text retrieval using a contrastive dual
     encoder**
 
 The project uses **GTZAN** for audio/graph experiments and **MusicCaps**

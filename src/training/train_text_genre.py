@@ -11,9 +11,7 @@ from src.models.text_genre_classifier import TextGenreClassifier
 
 
 
-# ============================================================
-# Configuration
-# ============================================================
+
 
 TRAIN_CSV = "data/processed/splits/fusion_dataset.csv"
 VAL_CSV = "data/processed/splits/fusion_dataset.csv"
@@ -32,9 +30,6 @@ EPOCHS = 20
 NUM_CLASSES = 10
 
 
-# ============================================================
-# Device
-# ============================================================
 
 device = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"
@@ -43,9 +38,6 @@ device = torch.device(
 print("Device:", device)
 
 
-# ============================================================
-# Dataloaders
-# ============================================================
 
 print("\nLoading text genre datasets...")
 
@@ -86,9 +78,6 @@ print(
 )
 
 
-# ============================================================
-# Model
-# ============================================================
 
 print("\nLoading DistilBERT text classifier...")
 
@@ -99,9 +88,6 @@ model = TextGenreClassifier(
 ).to(device)
 
 
-# ============================================================
-# Optimizer
-# ============================================================
 
 optimizer = Adam(
     model.parameters(),
@@ -109,9 +95,6 @@ optimizer = Adam(
 )
 
 
-# ============================================================
-# Training
-# ============================================================
 
 def train_one_epoch():
 
@@ -168,9 +151,7 @@ def train_one_epoch():
     return average_loss, accuracy
 
 
-# ============================================================
-# Evaluation
-# ============================================================
+
 
 def evaluate(loader):
 
@@ -223,9 +204,7 @@ def evaluate(loader):
     return average_loss, accuracy
 
 
-# ============================================================
-# Training loop
-# ============================================================
+
 
 best_val_accuracy = 0.0
 
@@ -289,9 +268,7 @@ for epoch in range(
         )
 
 
-# ============================================================
-# Final Test Evaluation
-# ============================================================
+
 
 print("\nLoading best text-only model...")
 

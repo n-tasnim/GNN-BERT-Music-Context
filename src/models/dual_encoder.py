@@ -38,9 +38,7 @@ class GraphEncoder(nn.Module):
         batch
     ):
 
-        # ----------------------------------------------------
-        # GraphSAGE
-        # ----------------------------------------------------
+   
 
         x = self.conv1(
             x,
@@ -56,9 +54,7 @@ class GraphEncoder(nn.Module):
 
         x = F.relu(x)
 
-        # ----------------------------------------------------
-        # Graph-level representation
-        # ----------------------------------------------------
+   
 
         x = global_mean_pool(
             x,
@@ -190,9 +186,7 @@ class DualEncoder(nn.Module):
             batch=graph.batch
         )
 
-        # ----------------------------------------------------
-        # Text embedding
-        # ----------------------------------------------------
+  
 
         text_embedding = self.text_encoder(
             input_ids=input_ids,

@@ -8,9 +8,6 @@ from src.dataset.dataloader import create_graph_dataloaders
 from src.models.graphsage import GraphSAGE
 
 
-# ============================================================
-# Configuration
-# ============================================================
 
 TRAIN_CSV = "data/processed/splits/graph_train.csv"
 VAL_CSV = "data/processed/splits/graph_val.csv"
