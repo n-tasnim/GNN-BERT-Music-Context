@@ -1,0 +1,85 @@
+{
+  "project": {
+    "name": "GNN-BERT for Multimodal Music Understanding and Cross-Modal Retrieval",
+    "paired_multimodal_test_samples": 77,
+    "paired_multimodal_test_contains_disco": false,
+    "num_gtzan_genres": 10
+  },
+  "task1_text_music_tag_prediction": {
+    "test_macro_f1": 0.5153,
+    "test_micro_f1": 0.693,
+    "test_macro_precision": 0.669,
+    "test_macro_recall": 0.4722,
+    "test_loss": 0.0955
+  },
+  "task2_graph_based_genre_classification": {
+    "graphsage": {
+      "test_accuracy": 0.66,
+      "macro_precision": 0.671,
+      "macro_recall": 0.66,
+      "macro_f1": 0.659
+    },
+    "cnn_baseline": {
+      "test_accuracy": 0.73,
+      "macro_precision": 0.782,
+      "macro_recall": 0.73,
+      "macro_f1": 0.716
+    }
+  },
+  "task3_multimodal_fusion": {
+    "gnn_only": {
+      "test_accuracy": 0.7273,
+      "macro_f1": 0.6218,
+      "macro_auc_pr": 0.6662
+    },
+    "distilbert_only": {
+      "test_accuracy": 0.7662,
+      "macro_f1": 0.6797,
+      "macro_auc_pr": 0.7887
+    },
+    "early_concat": {
+      "test_accuracy": 0.8052,
+      "macro_f1": 0.7343,
+      "macro_auc_pr": 0.7771
+    },
+    "cross_attention": {
+      "test_accuracy": 0.8052,
+      "macro_f1": 0.7379,
+      "micro_f1": 0.8052,
+      "macro_auc_pr": 0.9188,
+      "micro_auc_pr": 0.8961,
+      "test_loss": 0.8451
+    }
+  },
+  "task4_cross_modal_retrieval": {
+    "best_validation_contrastive_loss": 1.6369,
+    "test_contrastive_loss": 1.6442,
+    "caption_to_audio": {
+      "recall_at_1": 0.0649,
+      "recall_at_5": 0.2857,
+      "recall_at_10": 0.4286
+    },
+    "audio_to_caption": {
+      "recall_at_1": 0.0779,
+      "recall_at_5": 0.2468,
+      "recall_at_10": 0.4026
+    },
+    "random_retrieval_baseline": {
+      "recall_at_1": 0.013,
+      "recall_at_5": 0.0649,
+      "recall_at_10": 0.1299
+    }
+  },
+  "task4_zero_shot_genre": {
+    "accuracy": 0.1818,
+    "macro_precision": 0.2344,
+    "macro_recall": 0.225,
+    "macro_f1": 0.149
+  },
+  "task4_supervised_fusion_reference": {
+    "accuracy": 0.8052,
+    "macro_precision": 0.7544,
+    "macro_recall": 0.75,
+    "macro_f1": 0.7379
+  }
+}

@@ -72,10 +72,6 @@ print(
 )
 
 
-# ============================================================
-# Load model
-# ============================================================
-
 print("\nLoading trained fusion model...")
 
 model = EarlyConcatFusionModel(
@@ -98,10 +94,6 @@ model.eval()
 
 print("✓ Fusion model loaded")
 
-
-# ============================================================
-# Evaluation
-# ============================================================
 
 all_predictions = []
 all_labels = []
@@ -127,19 +119,11 @@ with torch.no_grad():
 
         labels = batch["labels"].to(device)
 
-        # ----------------------------------------------------
-        # Forward pass
-        # ----------------------------------------------------
-
         logits, _, _ = model(
             graph,
             input_ids,
             attention_mask
         )
-
-        # ----------------------------------------------------
-        # Loss
-        # ----------------------------------------------------
 
         loss = criterion(
             logits,
@@ -149,10 +133,6 @@ with torch.no_grad():
         total_loss += loss.item()
 
         num_batches += 1
-
-        # ----------------------------------------------------
-        # Predictions
-        # ----------------------------------------------------
 
         predictions = torch.argmax(
             logits,
@@ -177,10 +157,6 @@ with torch.no_grad():
         )
 
 
-# ============================================================
-# Convert to NumPy
-# ============================================================
-
 all_predictions = np.array(
     all_predictions
 )
@@ -193,10 +169,6 @@ all_probabilities = np.array(
     all_probabilities
 )
 
-
-# ============================================================
-# Metrics
-# ============================================================
 
 test_loss = total_loss / num_batches
 
@@ -233,11 +205,7 @@ micro_f1 = f1_score(
     zero_division=0
 )
 
-# ------------------------------------------------------------
-# AUC-PR
-# ------------------------------------------------------------
 
-# Convert multiclass labels to one-hot representation
 one_hot_labels = np.eye(
     NUM_CLASSES
 )[all_labels]
@@ -253,11 +221,6 @@ micro_auc_pr = average_precision_score(
     all_probabilities,
     average="micro"
 )
-
-
-# ============================================================
-# Final results
-# ============================================================
 
 print("\n" + "=" * 60)
 print("EARLY-CONCAT TEST RESULTS")
